@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Toaster.InfoToast(MainActivity.this, "Info Toast!");
-                Toast toast = Toast.makeText(MainActivity.this, "Helloooooo`", Toast.LENGTH_LONG);
+                /*Toast toast = Toast.makeText(MainActivity.this, "Helloooooo`", Toast.LENGTH_LONG);
                 View view = toast.getView();
                 int bg_color = Color.parseColor("#1FAA59");
                 view.getBackground().setColorFilter(bg_color, PorterDuff.Mode.SRC_IN);
@@ -42,7 +42,12 @@ public class MainActivity extends AppCompatActivity {
                 text.setTextColor(Color.WHITE);
                 text.setGravity(Gravity.FILL);
                 toast.setGravity(Gravity.BOTTOM | Gravity.FILL_HORIZONTAL, 0,0);
-                toast.show();
+                toast.show();*/
+                Toasty toasty = new Toasty(MainActivity.this);
+                toasty.setBackground("#000000");
+                toasty.setText("Heyy");
+                toasty.setTextColor("#FFFFFF");
+                toasty.show();
             }
         });
         btn2.setOnClickListener(new View.OnClickListener() {
