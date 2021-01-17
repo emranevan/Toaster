@@ -2,4 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.toastlibrary">
 
+    <application>
+        <activity android:name=".NewActivity"></activity>
+    </application>
+
 </manifest>
