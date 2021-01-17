@@ -4,10 +4,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
+import android.text.Layout;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,7 +32,17 @@ public class MainActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toaster.InfoToast(MainActivity.this, "Info Toast!");
+                //Toaster.InfoToast(MainActivity.this, "Info Toast!");
+                Toast toast = Toast.makeText(MainActivity.this, "Helloooooo`", Toast.LENGTH_LONG);
+                View view = toast.getView();
+                int bg_color = Color.parseColor("#1FAA59");
+                view.getBackground().setColorFilter(bg_color, PorterDuff.Mode.SRC_IN);
+                TextView text = view.findViewById(android.R.id.message);
+
+                text.setTextColor(Color.WHITE);
+                text.setGravity(Gravity.FILL);
+                toast.setGravity(Gravity.BOTTOM | Gravity.FILL_HORIZONTAL, 0,0);
+                toast.show();
             }
         });
         btn2.setOnClickListener(new View.OnClickListener() {

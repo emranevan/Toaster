@@ -18,7 +18,7 @@ public class Toaster {
         view.getBackground().setColorFilter(bg_color, PorterDuff.Mode.SRC_IN);
         TextView text = view.findViewById(android.R.id.message);
         text.setTextColor(Color.WHITE);
-        toast.setGravity(Gravity.FILL_HORIZONTAL, 0, 0);
+        toast.setGravity(Gravity.BOTTOM, 0, 0);
         toast.show();
     }
 
