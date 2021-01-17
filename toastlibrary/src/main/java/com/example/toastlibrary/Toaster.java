@@ -3,6 +3,7 @@ package com.example.toastlibrary;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
@@ -13,10 +14,11 @@ public class Toaster {
 
         Toast toast = Toast.makeText(context, message, Toast.LENGTH_LONG);
         View view = toast.getView();
-        int bg_color = Color.GREEN;
+        int bg_color = Color.parseColor("#1FAA59");
         view.getBackground().setColorFilter(bg_color, PorterDuff.Mode.SRC_IN);
         TextView text = view.findViewById(android.R.id.message);
         text.setTextColor(Color.WHITE);
+        toast.setGravity(Gravity.FILL_HORIZONTAL, 0, 0);
         toast.show();
     }
 
@@ -24,10 +26,11 @@ public class Toaster {
 
         Toast toast = Toast.makeText(context, message, Toast.LENGTH_LONG);
         View view = toast.getView();
-        int bg_color = Color.RED;
+        int bg_color = Color.parseColor("#E21717");
         view.getBackground().setColorFilter(bg_color, PorterDuff.Mode.SRC_IN);
         TextView text = view.findViewById(android.R.id.message);
         text.setTextColor(Color.WHITE);
+        toast.setGravity(Gravity.FILL_HORIZONTAL, 0, 0);
         toast.show();
     }
 
@@ -35,10 +38,11 @@ public class Toaster {
 
         Toast toast = Toast.makeText(context, message, Toast.LENGTH_LONG);
         View view = toast.getView();
-        int bg_color = Color.YELLOW;
+        int bg_color = Color.parseColor("#F4BE2C");
         view.getBackground().setColorFilter(bg_color, PorterDuff.Mode.SRC_IN);
         TextView text = view.findViewById(android.R.id.message);
         text.setTextColor(Color.WHITE);
+        toast.setGravity(Gravity.FILL_HORIZONTAL, 0, 0);
         toast.show();
     }
 }

@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.toastlibrary.Toaster;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -19,18 +21,24 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Button btn = findViewById(R.id.btn);
+        Button btn2 = findViewById(R.id.btn2);
+        Button btn3 = findViewById(R.id.btn3);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /*Intent intent = new Intent(MainActivity.this, NewActivity.class);
-                Toaster.toaster(MainActivity.this,"This is a toast");*/
-                Toast toast = new Toast(MainActivity.this);
-                toast.setDuration(Toast.LENGTH_LONG);
-
-                LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-                View view = inflater.inflate(R.layout.toast_layout, null);
-                toast.setView(view);
-                toast.show();
+                Toaster.InfoToast(MainActivity.this, "Info Toast!");
+            }
+        });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toaster.errorToast(MainActivity.this, "Error Toast!");
+            }
+        });
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toaster.successToast(MainActivity.this, "Success Toast!");
             }
         });
     }
